@@ -1,0 +1,26 @@
+.zoom-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.25s, opacity 0.25s;
+}
+
+.zoom-preview.active {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.zoomed-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
