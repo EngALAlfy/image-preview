@@ -1,15 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const imagePreview = document.getElementById("image-preview");
-    const zoomPreview = document.querySelector(".zoom-preview");
-    const zoomedImg = zoomPreview.querySelector(".zoomed-image");
+// Zoom preview functionality
+const imagesPreview = document.querySelectorAll('.image-previewed');
 
-    imagePreview.addEventListener("click", function() {
-        const src = this.getAttribute("src");
-        zoomedImg.setAttribute("src", src);
-        zoomPreview.classList.add("active");
+imagesPreview.forEach((image) => {
+    image.addEventListener('click', () => {
+        const zoomPreview = document.querySelector('.zoom-preview');
+        const zoomedImg = zoomPreview.querySelector('.zoomed-image');
+        zoomedImg.src = image.src;
+        zoomPreview.classList.add('active');
     });
+});
 
-    zoomPreview.addEventListener("click", function() {
-        zoomPreview.classList.remove("active");
-    });
+const zoomPreview = document.querySelector('.zoom-preview');
+zoomPreview.addEventListener('click', () => {
+    zoomPreview.classList.remove('active');
 });
